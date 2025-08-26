@@ -240,9 +240,9 @@ export function CartModal() {
                         currencyCode={cart.cost.totalAmount.currencyCode}
                       />
                     </div>
-                    <form action={redirectToCheckout}>
+                    <div>
                       <CheckoutButton />
-                    </form>
+                    </div>
                   </div>
                 </div>
               )}
