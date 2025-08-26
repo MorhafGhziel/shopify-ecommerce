@@ -4,7 +4,7 @@ import {
   useProduct,
   useUpdateURL,
 } from "@/components/ui/product/product-context";
-import { ProductOption, ProductVariant } from "@/lib/shopify/types";
+import { ProductOption, ProductVariant } from "@/types/shopify";
 import clsx from "clsx";
 
 type Combination = {
