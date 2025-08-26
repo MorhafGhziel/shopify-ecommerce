@@ -36,7 +36,7 @@ async function shopifyFetch<T>({
   headers?: HeadersInit;
   query: string;
   tags?: string[];
-  variables?: ExtractVariables<T>;
+  variables?: any;
 }): Promise<{ status: number; body: T } | never> {
   try {
     const result = await fetch(endpoint, {
@@ -80,7 +80,10 @@ async function shopifyFetch<T>({
   }
 }
 
-const removeEdgesAndNodes = (array: Connection<any>) => {
+const removeEdgesAndNodes = (array: Connection<any> | any[]) => {
+  if (Array.isArray(array)) {
+    return array;
+  }
   return array.edges.map((edge) => edge.node);
 };
 

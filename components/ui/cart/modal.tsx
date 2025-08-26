@@ -196,7 +196,7 @@ export function CartModal() {
                                 <EditItemQuantityButton
                                   item={item}
                                   type="minus"
-                                  onClick={() =>
+                                  onClickAction={() =>
                                     updateCartItem(item.merchandise.id, "minus")
                                   }
                                 />
@@ -208,7 +208,7 @@ export function CartModal() {
                                 <EditItemQuantityButton
                                   item={item}
                                   type="plus"
-                                  onClick={() =>
+                                  onClickAction={() =>
                                     updateCartItem(item.merchandise.id, "plus")
                                   }
                                 />

@@ -32,11 +32,11 @@ function SubmitButton({ type }: { type: "plus" | "minus" }) {
 export function EditItemQuantityButton({
   item,
   type,
-  onClick,
+  onClickAction,
 }: {
   item: CartItem;
   type: "plus" | "minus";
-  onClick: () => void;
+  onClickAction: () => void;
 }) {
   const [isPending, startTransition] = useTransition();
 
@@ -52,7 +52,7 @@ export function EditItemQuantityButton({
             quantity: type === "plus" ? item.quantity + 1 : item.quantity - 1,
           });
           if (!error) {
-            onClick();
+            onClickAction();
           }
         });
       }}
