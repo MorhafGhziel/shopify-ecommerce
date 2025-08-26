@@ -1,9 +1,9 @@
 import { GridTileImage } from "@/components/ui/grid/tile";
+import { getProducts } from "@/lib/shopify";
 import Link from "next/link";
 
 export async function Carousel() {
   // Temporarily using all products instead of a specific collection
-  const { getProducts } = await import("@/lib/shopify");
   const products = await getProducts({});
 
   if (!products?.length) return null;
