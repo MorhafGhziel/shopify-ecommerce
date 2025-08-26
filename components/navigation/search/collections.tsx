@@ -5,7 +5,20 @@ import { FilterList } from "./filter";
 
 async function CollectionList() {
   const collections = await getCollections();
-  return <FilterList list={collections} title="Collections" />;
+
+  const allCollections = [
+    {
+      title: "All",
+      path: "/search",
+    },
+    {
+      title: "Home page",
+      path: "/",
+    },
+    ...collections.filter((collection) => collection.title !== "Home page"),
+  ];
+
+  return <FilterList list={allCollections} title="Collections" />;
 }
 
 const skeleton = "mb-3 h-4 w-5/6 animate-pulse rounded-sm";
