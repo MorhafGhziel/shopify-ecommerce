@@ -1,0 +1,41 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        neutral: {
+          50: "#fafafa",
+          100: "#f5f5f5",
+          200: "#e5e5e5",
+          300: "#d4d4d4",
+          400: "#a3a3a3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+        },
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn .3s ease-in-out",
+      },
+    },
+  },
+  plugins: [
+    require("@tailwindcss/container-queries"),
+    require("@tailwindcss/typography"),
+  ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+};
