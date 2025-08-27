@@ -92,11 +92,11 @@ export function AddToCart({ product }: { product: Product }) {
       }}
       disabled={!availableForSale || !selectedVariantId || isPending}
       className={clsx(
-        "relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white",
+        "relative flex w-full items-center justify-center rounded-full bg-neutral-800 border border-neutral-600 p-4 tracking-wide text-white shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-neutral-700 hover:border-neutral-500",
         {
           "hover:opacity-90":
             availableForSale && selectedVariantId && !isPending,
-          "cursor-not-allowed opacity-60 hover:opacity-60":
+          "cursor-not-allowed opacity-60 hover:opacity-60 hover:bg-neutral-800 hover:border-neutral-600 hover:shadow-lg":
             !availableForSale || !selectedVariantId || isPending,
         }
       )}

@@ -21,23 +21,29 @@ export function Label({
         }
       )}
     >
-      <div
-        className={clsx(
-          "inline-flex items-center rounded-full border bg-white/70 p-1 text-xs font-semibold text-black backdrop-blur-md dark:border-neutral-800 dark:bg-black/70 dark:text-white",
-          {
-            "justify-between": position === "center",
-            "gap-2": position === "bottom",
-          }
-        )}
-      >
-        <h3 className="mr-2 line-clamp-1 pl-2 leading-none tracking-tight">
-          {title}
-        </h3>
-        <Price
-          className="flex-none rounded-full bg-blue-600 p-2 text-white"
-          amount={amount}
-          currencyCode={currencyCode}
-        />
+      <div className="relative group">
+        <div className="absolute inset-0 bg-black/30 rounded-2xl blur-lg transform group-hover:scale-105 transition-all duration-300"></div>
+        <div
+          className={clsx(
+            "relative inline-flex items-center rounded-2xl bg-gradient-to-r from-black/80 to-neutral-900/80 backdrop-blur-md shadow-2xl border border-white/10",
+            {
+              "justify-between w-full": position === "center",
+              "gap-2": position === "bottom",
+            }
+          )}
+        >
+          <h3 className="px-4 py-3 line-clamp-1 text-sm font-medium text-white/90">
+            {title}
+          </h3>
+          <div className="relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent"></div>
+            <Price
+              className="relative flex items-center px-4 py-3 text-sm font-bold text-white bg-gradient-to-r from-neutral-800 to-neutral-700 rounded-r-2xl"
+              amount={amount}
+              currencyCode={currencyCode}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

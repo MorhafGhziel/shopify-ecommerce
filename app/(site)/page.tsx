@@ -1,5 +1,5 @@
-import { Carousel } from "@/components/ui/carousel";
 import { ThreeItemGrid } from "@/components/ui/grid/three-items";
+import { SlidingProducts } from "@/components/ui/sliding-products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <>
       <ThreeItemGrid />
-      <Carousel />
+      <SlidingProducts />
     </>
   );
 }

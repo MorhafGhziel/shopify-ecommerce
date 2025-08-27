@@ -34,7 +34,7 @@ function CheckoutButton() {
           await handleCheckout(formData);
         });
       }}
-      className="w-full rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white opacity-90 hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-60"
+      className="w-full rounded-lg bg-neutral-800 border border-neutral-600 px-3 py-2 text-sm font-medium text-white shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-neutral-700 hover:border-neutral-500 disabled:cursor-not-allowed disabled:opacity-60"
       disabled={pending || isPending}
     >
       {pending || isPending ? (
